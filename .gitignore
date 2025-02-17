@@ -1,0 +1,14 @@
+.DS_Store
+.idea/
+.idea/*
+.vscode
+*.sublime*
+node_modules/
+npm-debug.*
+package-lock.json
+src/
+./app/
+*/main.min.js.LICENSE.txt
+gulp/
+gulpfile.js
+package.json
