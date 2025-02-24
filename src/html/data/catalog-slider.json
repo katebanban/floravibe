@@ -1,0 +1,51 @@
+[
+	{
+		"imgSrc": "images/catalog/slide-1.jpg",
+		"imgSources": "images/catalog/slide-1.avif;images/catalog/slide-1.webp",
+		"title": "Очарование",
+		"text": "11 веток кустовой розовой розы",
+		"price": "4400₽"
+	},
+	{
+		"imgSrc": "images/catalog/slide-2.jpg",
+		"imgSources": "images/catalog/slide-2.avif;images/catalog/slide-2.webp",
+		"title": "Цветочный бал",
+		"text": "9 веток кустовой белой хризантемы",
+		"price": "3700₽"
+	},
+	{
+		"imgSrc": "images/catalog/slide-3.jpg",
+		"imgSources": "images/catalog/slide-3.avif;images/catalog/slide-3.webp",
+		"title": "Нежность",
+		"text": "11 веток розовой альстромерии",
+		"price": "3600₽"
+	},
+	{
+		"imgSrc": "images/catalog/slide-4.jpg",
+		"imgSources": "images/catalog/slide-4.avif;images/catalog/slide-4.webp",
+		"title": "Сказочное утро",
+		"text": "3 ветки розовой гортензии, 2 ветки голубой гортензии",
+		"price": "3100₽"
+	},
+	{
+		"imgSrc": "images/catalog/slide-5.jpg",
+		"imgSources": "images/catalog/slide-5.avif;images/catalog/slide-5.webp",
+		"title": "Офелия",
+		"text": "11 веток белой кустовой розы",
+		"price": "4400₽"
+	},
+	{
+		"imgSrc": "images/catalog/slide-6.jpg",
+		"imgSources": "images/catalog/slide-6.avif;images/catalog/slide-6.webp",
+		"title": "Вересковый мед",
+		"text": "11 веток желтой альстромерии",
+		"price": "3600₽"
+	},
+	{
+		"imgSrc": "images/catalog/slide-7.jpg",
+		"imgSources": "images/catalog/slide-7.avif;images/catalog/slide-7.webp",
+		"title": "Гармония",
+		"text": "9 веток белой гортензии",
+		"price": "5580₽"
+	}
+]

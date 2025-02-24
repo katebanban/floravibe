@@ -1,0 +1,24 @@
+// для myClamp
+// Ширина полотна (макета)
+$templateWidth: 1920;
+// Минимальная ширина страницы
+$finishBreakpoint: 320;
+$unitsDefault: ""; // rem / ''
+
+// ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ (с ними можно работать из JS)
+:root {
+	// colors
+	--color-text: #241217;
+	--color-accent: #DFABB2;
+	--color-darkpink: #D36D88;
+	--color-white: #fff;
+	--color-gray: #ECE5E6;
+
+	// sizes, container
+	--container-width: #{rem(1160)};
+	--container-gap: #{rem(15)};
+
+	// fonts
+	--font-main: "Raleway", serif;
+	--font-title: "ElMessiri", serif;
+}

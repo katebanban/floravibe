@@ -1,0 +1,175 @@
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+html,
+body {
+	min-height: 100dvh;
+	scrollbar-gutter: stable; // чтобы скроллбар нормально себя вёл
+}
+
+img,
+svg,
+source,
+picture,
+video {
+	max-width: 100%;
+	height: auto;
+}
+
+img {
+	vertical-align: top; // чтобы не было отступа внизу у картинок по умолчанию
+}
+
+a,
+input,
+button,
+textarea,
+select,
+option,
+label {
+	cursor: pointer;
+	font: inherit;
+}
+
+body {
+	font-family: var(--font-main);
+	font-weight: 300; // Light
+	font-style: italic; // cursive
+	font-size: rem(18);
+
+	color: var(--color-text);
+	background-color: var(--color-white);
+
+	min-width: rem($finishBreakpoint);
+
+	* {
+		line-height: 120%;
+	}
+}
+
+.wrapper {
+	position: relative;
+	overflow: hidden;
+	min-height: 100%;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.main {
+	flex: 1 1 auto;
+
+	display: flex;
+	flex-direction: column;
+	gap: adapt(140, 60);
+}
+
+.container {
+	max-width: calc(var(--container-width) + (var(--container-gap) * 2));
+	padding: 0 var(--container-gap);
+	margin: 0 auto;
+
+	&--wide {
+		--container-width: #{rem(1300)};
+	}
+}
+
+//* COMPONENTS
+
+.no-scroll {
+	overflow: hidden;
+}
+
+.btn {
+	display: inline-block;
+	text-decoration: none;
+
+	padding: rem(13) rem(28) rem(9); // нижний отступ сделала меньше на 4px (на глаз), чтобы выровнять (опустить) текст внутри кнопки, потому что он визуально выше центра смотрелся
+	border: rem(2) solid transparent;
+	border-radius: rem(100);
+	background: var(--color-accent);
+
+	font-family: var(--font-title);
+	font-weight: 500;
+	font-style: normal;
+	font-size: rem(20);
+	color: var(--color-text);
+	text-align: center;
+
+	transition: all 0.3s;
+
+	@media (any-hover: hover) {
+		&:hover {
+			border-color: var(--color-darkpink);
+			background: transparent;
+			color: var(--color-darkpink);
+		}
+	}
+}
+
+.btn-white {
+	display: inline-block;
+	text-decoration: none;
+	color: inherit;
+
+	padding: rem(28) rem(46) rem(24); // нижний отступ сделала меньше на 4px (на глаз), чтобы выровнять (опустить) текст внутри кнопки, потому что он визуально выше центра смотрелся
+	background: var(--color-white);
+	box-shadow: 0 0 rem(10) rem(5) rgba(36, 18, 23, 0.1);
+	border: rem(2) solid transparent;
+	border-radius: rem(100);
+
+	font-family: var(--font-title);
+	font-size: rem(24);
+	font-weight: 500;
+	font-style: normal;
+	text-align: center;
+
+	transition: all 0.3s;
+
+	position: relative; // для ::before
+	overflow: hidden; // для ::before
+
+	&::before {
+		content: "";
+		position: absolute;
+		height: rem(170); // на глаз
+		width: rem(50); // на глаз
+		background: var(--color-darkpink);
+		left: rem(-30); // на глаз
+		top: rem(-50); // на глаз
+		transform: rotate(37deg); // на глаз
+		transition: all 0.3s;
+		opacity: 0.3;
+	}
+
+	@media (any-hover: hover) {
+		&:hover::before {
+			left: 95%; // на глаз
+		}
+	}
+
+	&--small {
+		padding: rem(18) rem(28) rem(16);
+		align-self: center;
+		font-size: rem(20);
+
+		&:before {
+			left: rem(-46); // на глаз
+		}
+	}
+}
+
+.section-title {
+	font-style: normal;
+	font-family: var(--font-title);
+	font-weight: 500;
+	font-size: adapt(60, 28, $finishBreakpoint, 1024);
+}

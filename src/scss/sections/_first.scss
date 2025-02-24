@@ -1,0 +1,126 @@
+.first {
+	background: var(--color-white);
+
+	&__body {
+		padding: rem(100) rem(30) 0;
+		background: var(--color-accent); // на всякий пожарный, если градиент не сработает
+		background: radial-gradient(ellipse, rgba(246, 228, 228, 1) 0%, rgba(255, 255, 255, 0) 50%), var(--color-accent);
+		border-radius: rem(32);
+		text-align: center;
+
+		@media (max-width: em(1024)) {
+			padding-top: rem(60);
+		}
+
+		@media (max-width: em(550)) {
+			padding: rem(60) rem(15) 0;
+		}
+	}
+
+	&__subtitle {
+		margin: 0 auto;
+		max-width: rem(925);
+
+		font-size: rem(40);
+		font-weight: 200;
+
+		@media (max-width: em(1024)) {
+			font-size: rem(28);
+		}
+
+		@media (max-width: em(768)) {
+			font-size: rem(20);
+		}
+
+		@media (max-width: em(550)) {
+			font-size: rem(18);
+		}
+
+		&:not(:last-child) {
+			margin-bottom: rem(32);
+
+			@media (max-width: em(1024)) {
+				margin-bottom: rem(16);
+			}
+		}
+	}
+
+	&__title {
+		margin: 0 auto;
+		max-width: rem(940);
+
+		font-family: var(--font-title);
+		font-size: rem(80);
+		font-weight: 500;
+		font-style: normal;
+		line-height: 100%;
+
+		@media (max-width: em(1024)) {
+			font-size: rem(58);
+		}
+
+		@media (max-width: em(768)) {
+			font-size: rem(38);
+
+			&:not(:last-child) {
+				margin-bottom: rem(30);
+			}
+		}
+
+		@media (max-width: em(550)) {
+			font-size: rem(28);
+		}
+	}
+
+	&__img {
+		margin: rem(-20) auto 0;
+		max-width: rem(1130);
+		padding-bottom: 30%; // вместо высоты, чтобы сделать картинку адаптивной
+		position: relative;
+		
+		@media (max-width: em(768)) {
+			display: flex;
+			flex-direction: column;
+			margin: 0 auto;
+		}
+
+		@media (max-width: em(550)) {
+			padding-bottom: 38%;
+		}
+
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			object-position: bottom;
+		}
+	}
+
+	&__btn {
+		position: absolute;
+		z-index: 2;
+		top: rem(88);
+		left: 50%;
+		transform: translateX(-50%);
+
+		@media (max-width: em(1024)) {
+			top: 50%;
+			transform: translate(-50%, -50%);
+			padding: rem(20) rem(30) rem(16);
+			font-size: rem(20);
+
+			&::before {
+				left: rem(-45);
+			}
+		}
+
+		@media (max-width: em(768)) {
+			position: static;
+			transform: translate(0, 0);
+			align-self: center;
+		}
+	}
+}

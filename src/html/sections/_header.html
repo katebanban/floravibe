@@ -1,0 +1,25 @@
+<header class="header" data-autocalc="header, height">
+	<div class="container container--wide">
+		<div class="header__body">
+			<a class="header__logo" href="#">
+				<img src="images/header/logo.svg" alt="header logo">
+			</a>
+			<nav class="header__menu menu">
+				<ul class="menu__list">
+					@@loop('../components/_menu-item.html','data/menu-item.json')
+				</ul>
+			</nav>
+			<div class="header__order">
+				<p class="header__price">
+					Букеты от 3000₽
+				</p>
+				<a class="header__btn btn" href="#">
+					Заказать
+				</a>
+			</div>
+			<button class="menu-btn" type="button" aria-label="open/close the menu">
+				<span></span>
+			</button>
+		</div>
+	</div>
+</header>

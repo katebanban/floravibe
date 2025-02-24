@@ -1,0 +1,205 @@
+.catalog {
+	background: var(--color-white);
+	padding-bottom: 30px; //!!! ПОТОМ УДАЛИТЬ, ПОСТАВИЛА ТОЛЬКО ЧТОБЫ СКРОЛЛБАР НОРМАЛЬНО ВИДЕТЬ ПОКА СТИЛИЗУЮ
+
+	&__title {
+		margin: 0;
+		margin-bottom: adapt(48, 30, $finishBreakpoint, 768);
+	}
+
+	&__slider-container {
+		padding-left: max(
+			var(--container-gap),
+			calc((100% - var(--container-width)) / 2)
+		); // формула, которая позволяет сделать отступ слева, похожий на отступ контейнера
+	}
+
+	&__slider {
+	}
+
+	&__slider-scroll {
+		margin-top: adapt(48, 30, $finishBreakpoint, 768);
+		position: static !important;
+		height: rem(4) !important;
+		width: 100% !important;
+		border-radius: rem(100) !important;
+		background: var(--color-gray) !important;
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+
+		.swiper-scrollbar-drag {
+			height: rem(6) !important;
+			background: var(--color-darkpink) !important;
+			border-radius: rem(100) !important;
+			cursor: grab;
+
+			&:active {
+				cursor: grabbing;
+			}
+		}
+	}
+}
+
+.catalog-slider {
+	margin: -10px; // возвращаем отступы что взяли на тень
+
+	.swiper-wrapper {
+		box-sizing: border-box; // чтобы карточки (слайды) нормальной высоты были (не обрезались слайдером)
+	}
+}
+
+.catalog-slide {
+	max-width: calc(
+		rem(380) + rem(10) + rem(20)
+	); // 380px - ширина карточки по макету, 30px - расстояние между карточками (по макету)
+	height: unset; // корректировка высоты карточки конкретно для этой ситуации
+	min-height: 100%; // корректировка высоты карточки конкретно для этой ситуации
+
+	&__wrapper {
+		height: 100%; // корректировка высоты карточки конкретно для этой ситуации
+		padding: 10px; // чтобы тень не обрезало
+		margin-right: rem(10); // расстояние между карточками
+	}
+
+	&__inner {
+		padding: rem(25);
+		border-radius: rem(32);
+		box-shadow: 0 0 rem(10) rem(5) rgba(36, 18, 23, 0.08);
+		min-height: 100%;
+
+		display: flex; // для того, чтобы прижать потом price-box вниз
+		flex-direction: column; // для того, чтобы прижать потом price-box вниз
+
+		@media (max-width: em(550)) {
+			padding: 0;
+		}
+	}
+
+	&:last-child &__wrapper {
+		margin-right: var(--container-gap);
+	}
+
+	&__fancybox-link {
+		display: block;
+
+		@media (any-hover: hover) {
+			&:hover {
+				.catalog-slide__image img {
+					transform: scale(1.1);
+				}
+			}
+		}
+
+		&:not(:last-child) {
+			margin-bottom: rem(25);
+
+			@media (max-width: em(550)) {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&__image {
+		position: relative;
+		border-radius: rem(25);
+		overflow: hidden;
+		height: rem(330);
+
+		@media (max-width: em(550)) {
+			border-radius: rem(25) rem(25) 0 0;
+		}
+
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: all 0.3s;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1; // для того, чтобы прижать потом price-box вниз
+
+		@media (max-width: em(550)) {
+			padding: rem(25);
+		}
+	}
+
+	&__title {
+		margin: 0;
+
+		text-align: center;
+		font-style: normal;
+		font-family: var(--font-title);
+		font-weight: 500;
+		font-size: adapt(32, 28, $finishBreakpoint, 550);
+		color: var(--color-darkpink);
+
+		&:not(:last-child) {
+			margin-bottom: rem(10);
+		}
+	}
+
+	&__text {
+		margin: 0;
+
+		text-align: center;
+		flex-grow: 1; // для того, чтобы прижать price-box вниз
+
+		&:not(:last-child) {
+			margin-bottom: rem(30);
+		}
+	}
+
+	&__price-box {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: rem(15);
+	}
+
+	&__price {
+		font-style: normal;
+		font-family: var(--font-title);
+		font-weight: 500;
+		font-size: rem(28);
+		line-height: 100%;
+	}
+
+	&__btn {
+	}
+
+	&--accent {
+		.catalog-slide__inner {
+			background: var(--color-accent);
+			justify-content: center;
+			padding: rem(30);
+		}
+
+		.catalog-slide__title {
+			color: var(--color-text);
+			font-size: rem(38);
+			line-height: 110%;
+
+			&:not(:last-child) {
+				margin-top: rem(40);
+				margin-bottom: rem(15);
+			}
+		}
+
+		.catalog-slide__text {
+			flex-grow: 0;
+			font-size: rem(24);
+
+			&:not(:last-child) {
+				margin-bottom: rem(60);
+			}
+		}
+	}
+}

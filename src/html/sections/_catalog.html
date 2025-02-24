@@ -1,0 +1,33 @@
+<section class="catalog" id="catalog">
+	<div class="container">
+		<h2 class="catalog__title section-title">
+			Каталог
+		</h2>
+	</div>
+	<div class="catalog__slider-container">
+		<div class="swiper catalog__slider catalog-slider">
+			<div class="swiper-wrapper">
+				@@loop('../components/_catalog-slide.html', 'data/catalog-slider.json')
+				<div class="swiper-slide catalog-slide catalog-slide--accent">
+					<!-- ! wrapper ==> чтобы не задавать отступы слайду, т.к. ширина слайда обычно вычисляется автоматически -->
+					<div class="catalog-slide__wrapper">
+						<div class="catalog-slide__inner">
+							<h3 class="catalog-slide__title">
+								Не нашли, что искали?
+							</h3>
+							<p class="catalog-slide__text">
+								Напишите нам и мы поможем найти нужный букет!
+							</p>
+							<a class="catalog-slide__btn btn-white btn-white--small" href="#">
+								Связаться с нами
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="swiper-scrollbar catalog__slider-scroll"></div>
+	</div>
+</section>
