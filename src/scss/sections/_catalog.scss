@@ -2,8 +2,6 @@
 	background: var(--color-white);
 
 	&__title {
-		margin: 0;
-		margin-bottom: adapt(48, 30, $finishBreakpoint, 768);
 	}
 
 	&__slider-container {
@@ -103,7 +101,7 @@
 		position: relative;
 		border-radius: rem(25);
 		overflow: hidden;
-		height: rem(330);
+		height: adapt(330, 295, $finishBreakpoint, 550);
 
 		@media (max-width: em(550)) {
 			border-radius: rem(25) rem(25) 0 0;
@@ -134,11 +132,6 @@
 		margin: 0;
 
 		text-align: center;
-		font-style: normal;
-		font-family: var(--font-title);
-		font-weight: 500;
-		font-size: adapt(32, 28, $finishBreakpoint, 550);
-		color: var(--color-darkpink);
 
 		&:not(:last-child) {
 			margin-bottom: rem(10);
@@ -169,6 +162,10 @@
 		font-weight: 500;
 		font-size: rem(28);
 		line-height: 100%;
+
+		span {
+			font-family: var(--font-main);
+		}
 	}
 
 	&__btn {

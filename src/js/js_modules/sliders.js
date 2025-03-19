@@ -10,4 +10,15 @@ export function initSliders() {
 			draggable: true
 		}
 	});
+
+	const benefitsSwiper = new Swiper('.benefits-swiper', {
+		grabCursor: true,
+		spaceBetween: 48,
+		loop: true,
+
+		pagination: {
+			el: ".benefits__pagination",
+			clickable: true
+		}
+	});
 }

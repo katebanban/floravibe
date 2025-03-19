@@ -168,8 +168,19 @@ body {
 }
 
 .section-title {
+	margin: 0;
+	margin-bottom: adapt(48, 30, $finishBreakpoint, 768);
+	
 	font-style: normal;
 	font-family: var(--font-title);
 	font-weight: 500;
 	font-size: adapt(60, 28, $finishBreakpoint, 1024);
+}
+
+.card-title {
+	font-style: normal;
+	font-family: var(--font-title);
+	font-weight: 500;
+	font-size: adapt(32, 28, $finishBreakpoint, 550);
+	color: var(--color-darkpink);
 }
