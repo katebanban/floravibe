@@ -15,6 +15,9 @@ export function initSliders() {
 		grabCursor: true,
 		spaceBetween: 48,
 		loop: true,
+		autoplay: {
+			delay: 4000
+		},
 
 		pagination: {
 			el: ".benefits__pagination",

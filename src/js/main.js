@@ -5,7 +5,7 @@ import { autoCalc } from "./js_modules/autoCalc.js";
 import { elementMover } from "./js_modules/elementMover.js";
 import { smoothScroll } from "./js_modules/smoothScroll.js";
 import { initSliders } from "./js_modules/sliders.js";
-//import { tabs } from "./js_modules/tabs.js";
+import { spoiler } from "./js_modules/spoiler.js";
 //import { loader } from "./js_modules/loader.js";
 
 import { Fancybox } from "@fancyapps/ui";
@@ -37,5 +37,6 @@ autoCalc();
 elementMover();
 smoothScroll();
 initSliders();
-//tabs();
 //loader();
+
+window.addEventListener('load', () => spoiler());

@@ -20,7 +20,7 @@ import fs from "fs"; // создаёт файл автогенерации шр�
 import fileInclude from "gulp-file-include"; // обеспечивает модульность HTML
 import htmlMin from "gulp-htmlmin"; // минифицирует HTML
 import htmlWebpAvif from "./gulp/plugins/picture-html.cjs"; // заменяет тег img на тег pictures
-import typograf from "gulp-typograf"; // обеспечивает правильный перенос текстов
+//import typograf from "gulp-typograf"; // обеспечивает правильный перенос текстов
 import prettier from "@bdchauvette/gulp-prettier"; // красиво формирует отступы в разметке
 
 //* CSS
@@ -29,7 +29,7 @@ import gulpSass from "gulp-sass"; // нужен для scss
 const sass = gulpSass(dartSass); // нужен для scss
 import autoprefixer from "gulp-autoprefixer"; // создаёт вендерные префиксы для поддержки в разных браузерах (-webkit / -moz / -ms)
 import groupCssMedia from "gulp-group-css-media-queries"; // группирует медиазапросы в css
-import cssShorthand from "gulp-shorthand"; // сокращённое написание свойств (например объединяет font-family, font-size и font-weight в одно свойство font)
+//import cssShorthand from "gulp-shorthand"; // сокращённое написание свойств (например объединяет font-family, font-size и font-weight в одно свойство font)
 import cssClean from "gulp-clean-css"; // лучше минимизирует css
 import avifCss from "gulp-avif-css"; // добавляет форматы avif и webp в стили для BG
 
@@ -100,15 +100,15 @@ function html() {
 				'$1./$4$5$7$1'
 			)
 		) // удаляет лишние пути ../../
-		.pipe(typograf({
-			locale: ['ru', 'en-US'],
-			htmlEntity: { type: 'digit' },
-			disableRule: ['common/punctuation/quote'],
-			safeTags: [
-				['<\\?php', '\\?>'],
-				['<no-typography>', '</no-typography>'],
-			]
-		}))
+		//.pipe(typograf({
+		//	locale: ['ru', 'en-US'],
+		//	htmlEntity: { type: 'digit' },
+		//	disableRule: ['common/punctuation/quote'],
+		//	safeTags: [
+		//		['<\\?php', '\\?>'],
+		//		['<no-typography>', '</no-typography>'],
+		//	]
+		//}))
 		.pipe(
 			prettier({
 				tabWidth: 4,
@@ -137,15 +137,15 @@ function htmlBuild() {
 				'$1./$4$5$7$1'
 			)
 		) // удаляет лишние пути ../../
-		.pipe(typograf({
-			locale: ['ru', 'en-US'],
-			htmlEntity: { type: 'digit' },
-			disableRule: ['common/punctuation/quote'],
-			safeTags: [
-				['<\\?php', '\\?>'],
-				['<no-typography>', '</no-typography>'],
-			]
-		}))
+		//.pipe(typograf({
+		//	locale: ['ru', 'en-US'],
+		//	htmlEntity: { type: 'digit' },
+		//	disableRule: ['common/punctuation/quote'],
+		//	safeTags: [
+		//		['<\\?php', '\\?>'],
+		//		['<no-typography>', '</no-typography>'],
+		//	]
+		//}))
 		.pipe(htmlWebpAvif({
 			extensions: ['.png', '.jpg', '.jpeg'], // image file extensions for which we create 'picture'
 			source: ['.avif', '.webp'], // create 'source' with these formats
@@ -213,7 +213,7 @@ function cssBuild() {
 		.pipe(plumberNotify('min SCSS BUILD'))
 		.pipe(sass({ outputStyle: 'compressed' }))
 		.pipe(groupCssMedia())
-		.pipe(cssShorthand())
+		//.pipe(cssShorthand())
 		.pipe(avifCss())
 		.pipe(autoprefixer({
 			grid: true,
