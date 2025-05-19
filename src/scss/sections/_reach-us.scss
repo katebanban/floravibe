@@ -1,0 +1,98 @@
+.reach-us {
+	&__body {
+		background: linear-gradient(180deg,rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 50%), url("../images/reach-us/bg.png") center / cover no-repeat;
+		border-radius: rem(32);
+		padding: rem(60) rem(70);
+
+		@media (max-width: em(1024)) {
+			padding: rem(60) rem(30);
+		}
+
+		@media (max-width: em(550)) {
+			padding: rem(30) rem(15) rem(15);
+		}
+	}
+
+	&__title {
+		color: var(--color-white);
+		text-align: center;
+	}
+
+	&__form {
+		background: var(--color-white);
+		border-radius: rem(32);
+
+		display: flex;
+		flex-direction: column;
+
+		max-width: rem(382);
+		padding: rem(36);
+
+		@media (max-width: em(768)) {
+			margin: 0 auto;
+		}
+
+		@media (max-width: em(550)) {
+			padding: rem(24);
+			border-radius: rem(24);
+		}
+	}
+
+	&__text {
+		margin: 0;
+
+		&:not(:last-child) {
+			margin-bottom: rem(30);
+		}
+	}
+
+	&__input-box {
+		display: flex;
+		flex-direction: column;
+		gap: rem(24);
+
+		&:not(:last-child) {
+			margin-bottom: rem(30);
+		}
+	}
+
+	&__field {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+
+	&__label {
+		font-family: var(--font-title);
+		font-style: normal;
+		font-weight: 400;
+		font-size: rem(16);
+	}
+
+	&__input {
+		border: rem(2) solid var(--color-gray);
+		border-radius: rem(100);
+		padding: rem(14) rem(30);
+		color: var(--color-text);
+
+		&:focus-visible {
+			border-color: transparent;
+			outline-color: var(--color-darkpink);
+
+			& + label {
+				color: var(--color-darkpink);
+			}
+		}
+
+		&::placeholder {
+			color: var(--color-darkgray);
+		}
+
+		&:not(:last-child) {
+			margin-top: rem(6);
+		}
+	}
+
+	&__btn {
+		padding: rem(15) rem(28) rem(11);
+	}
+}

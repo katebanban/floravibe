@@ -5,6 +5,7 @@ export function initMenu() {
 	if (menu) {
 		const body = document.querySelector('body');
 		const header = document.querySelector('.header');
+		const orderBtn = document.querySelector('.header__btn');
 		const menuLinks = document.querySelectorAll('.menu a');
 		const menuBtn = document.querySelector('.menu-btn');
 
@@ -22,6 +23,13 @@ export function initMenu() {
 				menuBtn.classList.remove('active');
 				body.classList.remove('no-scroll');
 			})
+		})
+
+		orderBtn.addEventListener('click', () => {
+			header.classList.remove('active');
+			menu.classList.remove('active');
+			menuBtn.classList.remove('active');
+			body.classList.remove('no-scroll');
 		})
 	}
 }

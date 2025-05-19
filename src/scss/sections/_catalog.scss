@@ -36,6 +36,17 @@
 			}
 		}
 	}
+
+	&__btn {
+		display: block;
+		max-width: rem(380);
+
+		margin: 0 auto;
+		margin-top: rem(48);
+
+		font-size: rem(24);
+		padding: rem(20) rem(20) rem(16);
+	}
 }
 
 .catalog-slider {
@@ -62,8 +73,10 @@
 	&__inner {
 		padding: rem(25);
 		border-radius: rem(32);
-		box-shadow: 0 0 rem(10) rem(5) rgba(36, 18, 23, 0.08);
+		//box-shadow: 0 0 rem(10) rem(5) rgba(36, 18, 23, 0.08);
 		min-height: 100%;
+
+		border: rem(4) solid var(--color-gray);
 
 		display: flex; // для того, чтобы прижать потом price-box вниз
 		flex-direction: column; // для того, чтобы прижать потом price-box вниз
@@ -145,18 +158,22 @@
 		flex-grow: 1; // для того, чтобы прижать price-box вниз
 
 		&:not(:last-child) {
-			margin-bottom: rem(30);
+			margin-bottom: rem(20);
 		}
 	}
 
-	&__price-box {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		gap: rem(15);
-	}
+	//&__price-box {
+	//	display: flex;
+	//	align-items: center;
+	//	justify-content: space-between;
+	//	gap: rem(15);
+	//}
 
 	&__price {
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+
 		font-style: normal;
 		font-family: var(--font-title);
 		font-weight: 500;
@@ -176,6 +193,7 @@
 			background: var(--color-accent);
 			justify-content: center;
 			padding: rem(30);
+			border: none;
 		}
 
 		.catalog-slide__title {
