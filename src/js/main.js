@@ -6,7 +6,7 @@ import { elementMover } from "./js_modules/elementMover.js";
 import { smoothScroll } from "./js_modules/smoothScroll.js";
 import { initSliders } from "./js_modules/sliders.js";
 import { spoiler } from "./js_modules/spoiler.js";
-//import { loader } from "./js_modules/loader.js";
+import { loader } from "./js_modules/loader.js";
 
 import { Fancybox } from "@fancyapps/ui";
 
@@ -37,6 +37,13 @@ autoCalc();
 elementMover();
 smoothScroll();
 initSliders();
-//loader();
+loader();
 
 window.addEventListener('load', () => spoiler());
+
+//* ДАТА (год создания/запуска проекта - актуальный год)
+const year = Number(document.querySelector('[data-year]').innerText);
+const currentYear = new Date().getFullYear();
+
+if (year < currentYear) document.querySelector('[data-year]').innerText = `${year} - ${currentYear}`;
+if (year > currentYear) document.querySelector('[data-year]').innerText = currentYear;

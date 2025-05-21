@@ -38,3 +38,11 @@
 	font-weight: 500;
 	font-style: normal;
 }
+@font-face {
+	font-family: Raleway;
+	font-display: swap;
+	src: url("../fonts/Raleway/Raleway-SemiBoldItalic.eot");
+	src: url("../fonts/Raleway/Raleway-SemiBoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Raleway/Raleway-SemiBoldItalic.woff2") format("woff2"), url("../fonts/Raleway/Raleway-SemiBoldItalic.woff") format("woff"), url("../fonts/Raleway/Raleway-SemiBoldItalic.ttf") format("truetype");
+	font-weight: 600;
+	font-style: italic;
+}

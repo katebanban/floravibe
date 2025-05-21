@@ -7,12 +7,13 @@
 	})
 </head>
 
-<body>
-	<!--<div class="loader-box">
+<body class="no-scroll">
+	<div class="loader-box">
 		<div class="loader">
-			<img class="loader__logo-img" src="images/header/logo.svg" alt="logo loader">
+			<img class="loader__logo" src="images/logo.svg" alt="logo loader">
+			<img class="loader__flower" src="images/flower-loader.svg" alt="flower loader">
 		</div>
-	</div>-->
+	</div>
 	<div class="wrapper">
 		@@include('sections/_header.html')
 		<main class="main">
@@ -23,6 +24,7 @@
 			@@include('sections/_reviews.html')
 			@@include('sections/_reach-us.html')
 		</main>
+		@@include('sections/_footer.html')
 	</div>
 </body>
 

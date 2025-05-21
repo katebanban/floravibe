@@ -73,7 +73,6 @@
 	&__inner {
 		padding: rem(25);
 		border-radius: rem(32);
-		//box-shadow: 0 0 rem(10) rem(5) rgba(36, 18, 23, 0.08);
 		min-height: 100%;
 
 		border: rem(4) solid var(--color-gray);
@@ -83,6 +82,7 @@
 
 		@media (max-width: em(550)) {
 			padding: 0;
+			overflow: hidden;
 		}
 	}
 
@@ -117,7 +117,7 @@
 		height: adapt(330, 295, $finishBreakpoint, 550);
 
 		@media (max-width: em(550)) {
-			border-radius: rem(25) rem(25) 0 0;
+			border-radius: unset;
 		}
 
 		img {
@@ -161,13 +161,6 @@
 			margin-bottom: rem(20);
 		}
 	}
-
-	//&__price-box {
-	//	display: flex;
-	//	align-items: center;
-	//	justify-content: space-between;
-	//	gap: rem(15);
-	//}
 
 	&__price {
 		display: flex;

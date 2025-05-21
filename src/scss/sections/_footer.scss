@@ -1,0 +1,155 @@
+.footer {
+	padding: rem(30) 0;
+	background: var(--color-white);
+
+	&__body {
+	}
+
+	&__top {
+		display: flex;
+		justify-content: space-between;
+		gap: rem(24);
+
+		&:not(:last-child) {
+			margin-bottom: rem(10);
+
+			@media (max-width: em(550)) {
+				margin-bottom: rem(16);
+			}
+		}
+
+		@media (max-width: em(550)) {
+			flex-direction: column;
+			align-items: center;
+			gap: rem(20);
+		}
+	}
+
+	&__contacts {
+	}
+
+	&__subtitle {
+		margin: 0;
+
+		font-family: var(--font-title);
+		font-style: normal;
+		font-weight: 500;
+		font-size: rem(20);
+		color: var(--color-darkpink);
+
+		&:not(:last-child) {
+			margin-bottom: rem(10);
+
+			@media (max-width: em(550)) {
+				margin-bottom: rem(4);
+			}
+		}
+
+		@media (max-width: em(550)) {
+			text-align: center;
+		}
+	}
+
+	&__text {
+		margin: 0;
+
+		&:not(:last-child) {
+			margin-bottom: rem(4);
+		}
+
+		@media (max-width: em(550)) {
+			text-align: center;
+		}
+	}
+
+	&__link {
+		text-decoration: none;
+		color: inherit;
+
+		position: relative;
+		transition: all 0.3s;
+
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: rem(-4);
+			left: 0;
+			width: 0;
+			height: rem(2);
+			background: var(--color-darkpink);
+			border-radius: rem(100);
+			transition: all 0.3s;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--color-darkpink);
+
+				&.footer__link::after {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	&__socials {
+	}
+
+	&__socials-list {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: rem(16);
+	}
+
+	&__schedule {
+	}
+
+	&__bottom {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__logo {
+		&:not(:last-child) {
+			margin-bottom: rem(16);
+		}
+	}
+
+	&__developer {
+		font-weight: 600;
+		color: var(--color-darkpink);
+	}
+}
+
+.socials-list {
+	&__item {
+		flex-shrink: 0;
+	}
+
+	&__link {
+		display: block;
+
+		@media (any-hover: hover) {
+			&:hover {
+				svg path {
+					fill: var(--color-darkpink);
+				}
+			}
+		}
+
+		svg {
+			display: block;
+			width: rem(30);
+
+			path {
+				transition: all .3s;
+			}
+		}
+	}
+}
