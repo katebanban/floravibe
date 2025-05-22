@@ -3,7 +3,7 @@ import Swiper from 'swiper/bundle';
 export function initSliders() {
 	const catalogSlider = new Swiper('.catalog-slider', {
 		slidesPerView: 'auto',
-		grabCursor: true,
+		//grabCursor: true,
 
 		scrollbar: {
 			el: ".catalog__slider-scroll",

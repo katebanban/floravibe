@@ -9,6 +9,8 @@
 			var(--container-gap),
 			calc((100% - var(--container-width)) / 2)
 		); // формула, которая позволяет сделать отступ слева, похожий на отступ контейнера
+
+		padding-right: var(--container-gap); //! обязательно задавай последний отступ слайдера здесь
 	}
 
 	&__slider {
@@ -50,48 +52,37 @@
 }
 
 .catalog-slider {
-	margin: -10px; // возвращаем отступы что взяли на тень
-
 	.swiper-wrapper {
 		box-sizing: border-box; // чтобы карточки (слайды) нормальной высоты были (не обрезались слайдером)
 	}
 }
 
 .catalog-slide {
-	max-width: calc(
-		rem(380) + rem(10) + rem(20)
-	); // 380px - ширина карточки по макету, 30px - расстояние между карточками (по макету)
+	max-width: rem(380);
 	height: unset; // корректировка высоты карточки конкретно для этой ситуации
 	min-height: 100%; // корректировка высоты карточки конкретно для этой ситуации
 
-	&__wrapper {
-		height: 100%; // корректировка высоты карточки конкретно для этой ситуации
-		padding: 10px; // чтобы тень не обрезало
-		margin-right: rem(10); // расстояние между карточками
+	&:not(:last-child) {
+		margin-right: rem(30); // отступ между слайдами
 	}
 
-	&__inner {
+	&__wrapper {
+		height: 100%; // корректировка высоты карточки конкретно для этой ситуации
+	}
+
+	&__inner-link {
+		text-decoration: none;
+		color: inherit;
+
 		padding: rem(25);
 		border-radius: rem(32);
 		min-height: 100%;
 
 		border: rem(4) solid var(--color-gray);
+		transition: all 0.3s;
 
 		display: flex; // для того, чтобы прижать потом price-box вниз
 		flex-direction: column; // для того, чтобы прижать потом price-box вниз
-
-		@media (max-width: em(550)) {
-			padding: 0;
-			overflow: hidden;
-		}
-	}
-
-	&:last-child &__wrapper {
-		margin-right: var(--container-gap);
-	}
-
-	&__fancybox-link {
-		display: block;
 
 		@media (any-hover: hover) {
 			&:hover {
@@ -101,12 +92,9 @@
 			}
 		}
 
-		&:not(:last-child) {
-			margin-bottom: rem(25);
-
-			@media (max-width: em(550)) {
-				margin-bottom: 0;
-			}
+		@media (max-width: em(550)) {
+			padding: 0;
+			overflow: hidden;
 		}
 	}
 
@@ -116,8 +104,12 @@
 		overflow: hidden;
 		height: adapt(330, 295, $finishBreakpoint, 550);
 
-		@media (max-width: em(550)) {
-			border-radius: unset;
+		&:not(:last-child) {
+			margin-bottom: rem(25);
+
+			@media (max-width: em(550)) {
+				margin-bottom: unset;
+			}
 		}
 
 		img {

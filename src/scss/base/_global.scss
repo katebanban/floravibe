@@ -147,39 +147,7 @@ body {
 	font-style: normal;
 	text-align: center;
 
-	transition: all 0.3s;
-
-	position: relative; // для ::before
-	overflow: hidden; // для ::before
-
-	&::before {
-		content: "";
-		position: absolute;
-		height: rem(170); // на глаз
-		width: rem(50); // на глаз
-		background: var(--color-darkpink);
-		left: rem(-30); // на глаз
-		top: rem(-50); // на глаз
-		transform: rotate(37deg); // на глаз
-		transition: all 0.3s;
-		opacity: 0.3;
-	}
-
-	@media (any-hover: hover) {
-		&:hover::before {
-			left: 95%; // на глаз
-		}
-	}
-
-	&--small {
-		padding: rem(18) rem(28) rem(16);
-		align-self: center;
-		font-size: rem(20);
-
-		&:before {
-			left: rem(-46); // на глаз
-		}
-	}
+	transition: all .3s;
 }
 
 .section-title {

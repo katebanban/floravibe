@@ -1,17 +1,16 @@
 <div class="swiper-slide catalog-slide">
 	<!-- ! wrapper ==> чтобы не задавать отступы слайду, т.к. ширина слайда обычно вычисляется автоматически -->
 	<div class="catalog-slide__wrapper">
-		<div class="catalog-slide__inner">
-			<a
-				class="catalog-slide__fancybox-link"
-				href="@@imgSrcBig"
-				data-fancybox
-				data-sources="@@imgSources"
-			>
-				<div class="catalog-slide__image">
-					<img src="@@imgSrc" alt="Букет '@@title'" />
-				</div>
-			</a>
+		<a
+			class="catalog-slide__inner-link"
+			href="@@imgSrcBig"
+			data-fancybox
+			data-sources="@@imgSources"
+		>
+			<div class="catalog-slide__image">
+				<img src="@@imgSrc" alt="Букет '@@title'" />
+			</div>
+
 			<div class="catalog-slide__content">
 				<h3 class="catalog-slide__title card-title">
 					@@title
@@ -19,10 +18,8 @@
 				<p class="catalog-slide__text">
 					@@text
 				</p>
-				<div class="catalog-slide__price">
-					@@price<span>₽</span>
-				</div>
+				<div class="catalog-slide__price">@@price<span>₽</span></div>
 			</div>
-		</div>
+		</a>
 	</div>
 </div>
